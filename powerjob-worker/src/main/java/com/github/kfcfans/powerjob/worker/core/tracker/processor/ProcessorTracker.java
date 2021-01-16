@@ -340,7 +340,7 @@ public class ProcessorTracker {
         ExecuteType executeType = ExecuteType.valueOf(instanceInfo.getExecuteType());
         ProcessorType processorType = ProcessorType.valueOf(instanceInfo.getProcessorType());
 
-        if (executeType == ExecuteType.MAP_REDUCE) {
+        if (executeType == ExecuteType.MAP_REDUCE || executeType == ExecuteType.MAP) {
             return instanceInfo.getThreadConcurrency();
         }
         boolean exeStandalone = executeType == ExecuteType.STANDALONE;
